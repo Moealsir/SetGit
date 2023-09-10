@@ -5,6 +5,7 @@
 1. SSH connection to your alx webterminal
 2. Create an alias to connect fast to the webterminal
 3. set a function gcl to clone a repo fast
+You can choose to either setting up GitHub profile and install gcl only or install both of them and set SSH connection too.
 ````
 <br>
 
