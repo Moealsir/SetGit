@@ -27,3 +27,13 @@ You can choose to either setting up GitHub profile and install gcl only or insta
 6. Your Password from webterminal
 7. Your token
 ```
+<br>
+
+**Usage**
+```
+1. To open Alx terminal write the command
+$ alx
+2. To clone a repo just write "gcl rep_name"
+for example:
+$ gcl SetGit
+```
