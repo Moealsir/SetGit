@@ -1,39 +1,29 @@
-# SetGit Script
- 
-**This script help you setting up the following**
-````
-1. SSH connection to your alx webterminal
-2. Create an alias to connect fast to the webterminal
-3. set a function gcl to clone a repo fast
-You can choose to either setting up GitHub profile and install gcl only or install both of them and set SSH connection too.
-````
-<br>
+#Usage:
+1. Clone repo anywhere and cd repo
+2. Use chmod +x to change files permissions
+3. First start ./alias_bash.h script
+then fill the requireds
+after script finish it will install fish shell
+4. start fish with the command:
+fish
+5. now start ./alias_fish.h script
+and fill requireds
 
-**Installation**
-```
-1. Clone the repo anywhere
-2. chmod +x SetGit.sh
-3. ./SetGit.sh
-```
-<br>
+#Both script will set the follwing:
+1. aliases to can be used (you can modify them later)
+2. functions that can be used.
+3. you can use the command 're' to quick open a directory you visited before
+4. use the command 'gtc' to quick set git config file
+5. Use the function 'gcl' to quick clone repo from your repositry. 
+for example: alx-low_level_programming
+it will clone the repo and cd the repo, run pwd to check your path.
+6. Use the function 'e' to echo file
+for example: e 'readme file' README.md
+7. Use the function 'ea' to append into file
+for example: ea 'another line' README.md
+8. Use the function 'm' to make a directory.
+for example: m 0x07-pointers_arrays_strings
+9. Use the function 'gacp' to git add commit and push.
+**attention: use this command only and only in master branch, if else use aliases**
+for example: gacp "my first commit"
 
-**You need to provide the following**
-```
-1. Your GitHub email
-2. Your GitHub username
-3. Your GitHub password
-4. Your Host from webterminal
-5. Your Username from webterminal
-6. Your Password from webterminal
-7. Your token
-```
-<br>
-
-**Usage**
-```
-1. To open Alx terminal write the command
-$ alx
-2. To clone a repo just write "gcl rep_name"
-for example:
-$ gcl SetGit
-```
