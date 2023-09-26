@@ -17,6 +17,7 @@ echo "
 #Basic aliases
 alias ob='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
+alias alias='vi~/.bash_aliases'
 alias ccc='clear'
 alias t='touch'
 alias i='sudo apt-get install'
@@ -43,7 +44,7 @@ alias gco='git checkout'
 alias p='git push'
 alias pl='git pull'
 
-" >> ~/.bashrc
+" >> ~/.bash_aliases
 
 clear
 echo "Aliases was created."
