@@ -164,5 +164,9 @@ cd() {
 
 " >> ~/.bashrc
 
+source ~/.bashrc
+
 clear
 echo "Scripted successfully."
+
+fish

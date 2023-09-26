@@ -82,3 +82,6 @@ echo 'function gtc
 
     echo "Git global configuration set to Name: $gituser, Email: $gitmail, Password: $gitpass"
 end' > ~/.config/fish/functions/gtc.fish
+
+fish 
+echo "Scripted successfully."
