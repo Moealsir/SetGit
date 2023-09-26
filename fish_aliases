@@ -26,7 +26,7 @@ alias v 'vim'
 alias l 'ls'
 alias t 'touch'
 alias f 'fish'
-alias fc 'code ~/.config/fish/config.fish'
+alias fc 'vi ~/.config/fish/config.fish'
 alias ff 'cd ~/.config/fish/functions'
 
 set token 
