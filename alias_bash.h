@@ -43,6 +43,6 @@ fi
 " > dir_navigator.sh
 
 sudo chmod +x dir_navigator.sh
-mv dir_navigator.sh /usr/local/bin/
+sudo mv dir_navigator.sh /usr/local/bin/
 
 echo "Successfully scripted."
