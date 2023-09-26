@@ -11,7 +11,7 @@ vi ~/.bashrc
 ~~~
 copy 'bash_file' content and paste it at the end of ~/.bashrc file (DON'T DELETE ANYTHING FROM THIS FILE!)<br>
 !modify the vaiables to your own information!<br>
-save and exit file. <be>
+save and exit file. <br>
 now run the command: 
 ~~~
 source ~/.bashrc
