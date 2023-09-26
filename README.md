@@ -9,8 +9,8 @@ after script finish it will install and start fish shell
 ~~~
 vi ~/.bashrc
 ~~~
-copy 'bash_file' content and paste it at the end of ~/.bashrc file then save it (DON'T DELETE ANYTHING FROM THIS FILE!)
-
+copy 'bash_file' content and paste it at the end of ~/.bashrc file then save it (DON'T DELETE ANYTHING FROM THIS FILE!)<br>
+!modify the vaiables to your own information!<br>
 now run the command: 
 ~~~
 source ~/.bashrc
@@ -20,12 +20,15 @@ source ~/.bashrc
 ~~~
 vi ~/.config/fish/config.fish
 ~~~
-copy 'fish_aliases' file and paste it inside config.fish and save file
+copy 'fish_aliases' file and paste it inside config.<br>
+!modify the vaiables to your own information!<br>
+save file.
 
 run the command to restart fish shell:
 ~~~
 fish
 ~~~
+
 
 **#Both script will set the follwing:**
 1. aliases can be used anytime (you can modify them later)
