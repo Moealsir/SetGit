@@ -3,7 +3,7 @@
 clear
 
 #install fish
-apt install fish -y
+sudo apt install fish -y
 
 clear
 echo "Fish installed successfully."
