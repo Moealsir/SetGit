@@ -30,12 +30,11 @@ alias p='git push'
 alias pl='git pull'
 
 #mygithub
-gituser=writeyourusernamehere
-gitmail=writeyouremailhere
-gitpass=writeyourpassword
+gituser=
+gitmail=
 
 #mytoken
-token=writeyourtokenhere
+token=
 
 # function to insert name and email of GitHub
 gtc() {
