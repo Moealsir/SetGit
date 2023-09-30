@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 clear
-mkdir ~/.config/fish/functions
+sudo mkdir ~/.config/fish/functions
  
 echo 'function e
     echo "$argv[1]" > "$argv[2]"
