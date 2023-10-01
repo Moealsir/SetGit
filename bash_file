@@ -52,9 +52,9 @@ gcl() {
 }
 
 #echo
-e() {
-     echo "$1" > "$2"
-}
+    e() {
+        echo "$1" > "$2"
+    }
 
 #append
 ea() {

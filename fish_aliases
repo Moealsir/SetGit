@@ -29,7 +29,7 @@ alias f 'fish'
 alias fc 'vi ~/.config/fish/config.fish'
 alias ff 'cd ~/.config/fish/functions'
 
-set token writehereyourtoken
-set gitmail writehereyourgitmail
-set gituser writehereyouruser
-set gitpass writehereyourpass
+set token 
+set gitmail 
+set gituser 
+set gitpass 

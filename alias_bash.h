@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 
 clear
 
@@ -45,4 +45,7 @@ fi
 sudo chmod +x dir_navigator.sh
 sudo mv dir_navigator.sh /usr/local/bin/
 
+clear
+echo "Fish installed successfully."
+echo
 echo "Successfully scripted."
