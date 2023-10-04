@@ -86,5 +86,5 @@ source ~/.bashrc
 echo "Fish installed successfully."
 echo
 echo "Successfully scripted."
-
+source ~/.bashrc
 fish

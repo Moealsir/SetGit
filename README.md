@@ -9,7 +9,8 @@
 2. Functions can be used.
 3. You can use the command 're' to quick open a directory you visited before
 4. Use the command 'gtc' to quick set git config file running the command
-```gtc```
+```gtc`ls
+``
 5. Use the function 'gcl' to quick clone repo from your repositry. 
 >Usage example: alx-low_level_programming
 it will clone the repo and cd the repo, run pwd to check your path.
