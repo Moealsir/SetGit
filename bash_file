@@ -44,7 +44,7 @@ gtc() {
 
 gcl() {
     git clone https://$token@github.com/$gituser/$1.git
-    cd $1
+
 }
 
 #echo
