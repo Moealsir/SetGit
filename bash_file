@@ -1,3 +1,5 @@
+
+
 #Aliases:
 
 #Basic aliases
@@ -5,6 +7,7 @@ alias ob='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
 alias ccc='clear'
 alias t='touch'
+alias l='ls'
 alias i='sudo apt-get install'
 alias v='vim'
 alias d='rm -rf'
@@ -28,13 +31,6 @@ alias st='git status'
 alias gco='git checkout'
 alias p='git push'
 alias pl='git pull'
-
-#mygithub
-gituser=
-gitmail=
-
-#mytoken
-token=
 
 # function to insert name and email of GitHub
 gtc() {
@@ -111,3 +107,4 @@ export DIR_HISTORY_FILE="$HOME/.dir_history"
 cd() {
     builtin cd "$@" && echo "$PWD" >> "$DIR_HISTORY_FILE"
 }
+

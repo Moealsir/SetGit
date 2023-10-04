@@ -1,0 +1,34 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+alias ob 'vi ~/.bashrc'
+alias sb 'source ~/.bashrc'
+alias ccc 'clear'
+alias t 'touch'
+alias l 'ls'
+alias i 'sudo apt-get install'
+alias v 'vim'
+alias d 'rm -rf'
+alias cx 'chmod +x'
+alias f 'fish'
+
+#naviagation aliases
+alias c 'cd '
+#go back to previous directories
+alias b 'cd ..'
+alias bb 'cd ../..'
+alias b3 'cd ../../../'
+alias b4 'cd ../../../../'
+alias b5 'cd ../../../../../'
+
+#Git aliases
+alias ada 'git add *'
+alias ad 'git add'
+alias gb 'git branch'
+alias st 'git status'
+alias gco 'git checkout'
+alias p 'git push'
+alias pl 'git pull'
+alias fc 'vi ~/.config/fish/config.fish'
+alias ff 'cd ~/.config/fish/functions'
+
