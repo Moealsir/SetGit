@@ -36,7 +36,7 @@ alias ff 'cd ~/.config/fish/functions'
 alias alx='sshpass -p "84b8a7e3c59122fde1c3" ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=5 3a5993c2f91b@3a5993c2f91b.53c8753f.alx-cod.online'
 
 #mygithub
-set token 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
+set token 
 
-set gituser Moealsir
-set gitmail mohamedwdalsir@gmail.com
+set gituser 
+set gitmail 
