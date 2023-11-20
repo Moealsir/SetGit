@@ -86,5 +86,9 @@ source ~/.bashrc
 echo "Fish installed successfully."
 echo
 echo "Successfully scripted."
-source ~/.bashrc
-fish
+
+echo
+echo
+echo "Please run the following commands to complete the setup."
+echo
+echo "source ~/.bashrc"
