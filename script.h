@@ -43,7 +43,7 @@ fi
 
 #change permission to dir_navigator.sh
 sudo chmod +x dir_navigator.sh
-sudo mv dir_navigator.sh /usr/local/bin/
+sudo mv dir_navigator.sh /bin/
 
 clear
 
@@ -61,7 +61,7 @@ sudo cat fish_aliases >> ~/.config/fish/config.fish
 sudo mkdir -p ~/.config/fish/functions
 
 #copy functions to the directory
-sudo cp funcs/* ~/.config/fish/functions
+sudo cp funcs/\* ~/.config/fish/functions
 
 clear
 echo "Setting up Variables"

@@ -5,17 +5,16 @@
 #Basic aliases
 alias ob='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
-alias ccc='clear'
+alias c='clear'
 alias t='touch'
 alias l='ls'
 alias i='sudo apt-get install'
 alias v='vim'
-alias d='rm -rf'
+alias d='trash'
 alias cx='chmod +x'
 alias f='fish'
+alias x='betty *.c'
 
-#naviagation aliases
-alias c='cd '
 #go back to previous directories
 alias b='cd ..'
 alias bb='cd ../..'
@@ -48,9 +47,9 @@ gcl() {
 }
 
 #echo
-    e() {
-        echo "$1" > "$2"
-    }
+e() {
+    echo "$1" > "$2"
+}
 
 #append
 ea() {
@@ -70,22 +69,6 @@ m() {
    cd $1
 }
 
-
-#make folder and sub folders
-mkf() {
-    if [ $# -lt 2 ]; then
-        echo "Usage: mkf <main_folder> <subfolder1> <subfolder2> ..."
-        return 1
-    fi
-
-    main_folder="$1"
-    shift
-    subfolders=("$@")
-
-    for subfolder in "${subfolders[@]}"; do
-        mkdir -p "$main_folder/$subfolder"
-    done
-}
 
 #navigator
 re() {
