@@ -17,6 +17,8 @@ This script is designed to streamline various tasks related to managing and form
 2. Review the aliases in `bash_file` and update alias names if necessary before installing.
 3. Run `./install.sh`
 4. Ensure you don't have an alias or function named `x`; change it if found.
+5. Run `source ~/.bashrc`
+6. Copy `x` script into your bin
 
 ## Functions:
 - **re** - use this function to fast travel between directories
