@@ -1,15 +1,16 @@
+#### means IMPOTANT
+# normal comment
+
 #Aliases:
 
 #Basic aliases
 
-alias cl="git clone"
-alias ob='open ~/.bashrc'
-alias o='open'
+alias ob='code ~/.bashrc' ####change if you use VI
+alias o='code' ####change if you use VI
 alias sb='source ~/.bashrc'
-alias f='fish'
 alias i='sudo apt-get install'
-alias d='trash'
-alias dd='sudo rm -rf /home/siroo/.local/share/Trash/files/*'
+alias d='trash' #### install trash first, use it once to get the install command
+alias dd='sudo rm -rf /home/siroo/.local/share/Trash/files/*' # this alias empty trash directory
 alias cx='chmod +x'
 alias xx='chmod -x'
 
@@ -21,11 +22,9 @@ alias b4='cd ../../../../'
 alias b5='cd ../../../../../'
 
 alias q="python3"
-alias qq='run_pycodestyle'
-alias s='run_betty'
+alias qq='run_pycodestyle' # If no arguments provided, check for *.py files
+alias s='run_betty' # If no arguments provided, check for *.c files
 alias v='valgrind'
-
-
 
 #Git aliases
 alias cl="git clone"
