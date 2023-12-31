@@ -1,19 +1,17 @@
-
-
 #Aliases:
 
 #Basic aliases
-alias ob='vi ~/.bashrc'
+
+alias cl="git clone"
+alias ob='open ~/.bashrc'
+alias o='open'
 alias sb='source ~/.bashrc'
-alias c='clear'
-alias t='touch'
-alias l='ls'
-alias i='sudo apt-get install'
-alias v='vim'
-alias d='trash'
-alias cx='chmod +x'
 alias f='fish'
-alias x='betty *.c'
+alias i='sudo apt-get install'
+alias d='trash'
+alias dd='sudo rm -rf /home/siroo/.local/share/Trash/files/*'
+alias cx='chmod +x'
+alias xx='chmod -x'
 
 #go back to previous directories
 alias b='cd ..'
@@ -22,14 +20,139 @@ alias b3='cd ../../../'
 alias b4='cd ../../../../'
 alias b5='cd ../../../../../'
 
+alias q="python3"
+alias qq='run_pycodestyle'
+alias s='run_betty'
+alias v='valgrind'
+
+
+
 #Git aliases
+alias cl="git clone"
 alias ada='git add *'
 alias ad='git add'
 alias gb='git branch'
 alias st='git status'
 alias gco='git checkout'
-alias p='git push'
+alias gp='git push'
 alias pl='git pull'
+
+
+#Functions
+
+###############################################################################
+
+#Auto completion for bash shell for default user:
+
+# Check if ble.sh is installed
+if [ ! -d "$HOME/ble.sh" ]; then
+    # Clone the repository and build ble.sh
+    git clone --recursive https://github.com/akinomyoga/ble.sh.git $HOME/ble.sh
+    make -C $HOME/ble.sh
+fi
+
+# Source ble.sh
+source $HOME/ble.sh/out/ble.sh
+
+###############################################################################
+
+
+run_betty() {
+    if [ "$#" -eq 0 ]; then
+        # If no arguments provided, check for *.c files
+        if [ -n "$(ls *.c 2>/dev/null)" ]; then
+            betty *.c
+        fi
+    else
+        # If arguments provided, run betty on specified files
+        betty "$@"
+    fi
+}
+
+run_pycodestyle() {
+    if [ "$#" -eq 0 ]; then
+        # If no arguments provided, check for *.py files
+        if [ -n "$(ls *.py 2>/dev/null)" ]; then
+            pycodestyle *.py
+        fi
+    else
+        # If arguments provided, run pycodestyle on specified files
+        pycodestyle "$@"
+    fi
+}
+
+
+###############################################################################
+
+#################################  navigator  #################################
+re() {
+    if [ "$#" -eq 1 ]; then
+        # Use the provided path number as an argument and change directory
+        eval "$(dir_navigator.sh "$1")"
+    else
+        while true; do
+            # Display directory history
+            dir_navigator.sh
+
+            # Prompt the user
+            echo "Enter a number to change directory, 'd' to delete, or 'q' to quit."
+            read choice
+
+            if [ "$choice" == "q" ]; then
+                break
+            elif [ "$choice" == "d" ]; then
+                # Request user input for paths to delete
+                echo "Enter the numbers of paths to delete (separated by space), or 'q' to quit:"
+                read delete_choices
+
+                if [ "$delete_choices" == "q" ]; then
+                    break
+                else
+                    # Reverse ~/.dir_history in a temp file
+                    tac "$DIR_HISTORY_FILE" > "$DIR_HISTORY_FILE.tmp"
+
+                    # Delete the selected lines
+                    IFS=" " read -ra delete_numbers <<< "$delete_choices"
+                    delete_numbers=($(echo "${delete_numbers[@]}" | tr ' ' '\n' | sort -nr))
+                    for num in "${delete_numbers[@]}"; do
+                        sed -i "${num}d" "$DIR_HISTORY_FILE.tmp"
+                    done
+
+                    # Reverse the temp file again before updating ~/.dir_history
+                    tac "$DIR_HISTORY_FILE.tmp" > "$DIR_HISTORY_FILE"
+
+                    # Remove the temporary file
+                    rm "$DIR_HISTORY_FILE.tmp"
+                fi
+            else
+                # Use the choice as an argument and change directory
+                eval "$(dir_navigator.sh "$choice")"
+                break
+            fi
+        done
+    fi
+}
+
+
+cleanup_dir_history() {
+    wait
+
+    # Read the file from the end, remove duplicates, and update the history file
+    tac "$DIR_HISTORY_FILE" | awk '!seen[$0]++' | tac > "$DIR_HISTORY_FILE.tmp"
+    mv "$DIR_HISTORY_FILE.tmp" "$DIR_HISTORY_FILE"
+}
+
+export DIR_HISTORY_FILE="$HOME/.dir_history"
+
+Append the new directory to the history file whenever 'cd' is used
+cd() {
+   builtin cd "$@" && echo "$PWD" >> "$DIR_HISTORY_FILE" && cleanup_dir_history
+}
+
+#################################  navigator  #################################
+
+###############################################################################
+
 
 # function to insert name and email of GitHub
 gtc() {
@@ -38,17 +161,19 @@ gtc() {
     echo "Git global configuration set to Name: $gituser, Email: $gitmail"
 }
 
-#Functions
+
+
 #clone any repo
 
 gcl() {
     git clone https://$token@github.com/$gituser/$1.git
-
+    cd $1
 }
+
 
 #echo
 e() {
-    echo "$1" > "$2"
+     echo "$1" > "$2"
 }
 
 #append
@@ -57,37 +182,15 @@ ea() {
 }
 
 #git add commit push
-gacp () {
+gacp() {
     git add .
     git commit -m "$1"
     git push
 }
+
 
 #make di and cd dir
 m() {
    mkdir -v -p $1
    cd $1
 }
-
-
-#navigator
-re() {
-    # Display directory history
-    dir_navigator.sh
-
-    # Prompt the user
-    echo "Enter a number to change directory, or 'q' to quit."
-    read choice
-
-    # Use the choice as an argument and change directory
-    eval "$(dir_navigator.sh "$choice")"
-}
-
-
-export DIR_HISTORY_FILE="$HOME/.dir_history"
-
-# Append the new directory to the history file whenever 'cd' is used
-cd() {
-    builtin cd "$@" && echo "$PWD" >> "$DIR_HISTORY_FILE"
-}
-
