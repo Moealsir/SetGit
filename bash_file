@@ -42,7 +42,7 @@ alias pl='git pull'
 ###############################################################################
 
 #Auto completion for bash shell for default user:
-
+ 
 # Check if ble.sh is installed
 if [ ! -d "$HOME/ble.sh" ]; then
     # Clone the repository and build ble.sh
